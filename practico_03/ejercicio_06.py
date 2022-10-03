@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from typing import List
+from typing_extensions import Self
 
 
 # NO MODIFICAR - INICIO
@@ -17,6 +18,11 @@ class Article:
     # NO MODIFICAR - FIN
 
     # Completar
+    def __str__(self) -> str:
+        return self.name
+    def __repr__(self) -> str:
+        return f"Article('{self.name}')"
+    
 
 
 # NO MODIFICAR - INICIO
@@ -49,9 +55,18 @@ class ShoppingCart:
 
     # NO MODIFICAR - FIN
 
-    # Completar
+    # Completar   
+    def __str__(self):
+        return f"{str([str(art) for art in self.articles])}"
 
+    def __repr__(self) -> str:
+        return f"ShoppingCart({self.articles})"
+    
+    def __eq__(self, other: ShoppingCart) -> bool:
+        return self.articles == self.articles
 
+    def __add__(self,other:ShoppingCart) -> ShoppingCart:
+        return ShoppingCart(self.articles+other.articles)
 # NO MODIFICAR - INICIO
 
 manzana = Article("Manzana")

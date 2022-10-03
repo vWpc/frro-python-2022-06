@@ -11,12 +11,28 @@ def crear_tabla():
         - Altura: Int()
     """
     pass # Completar
+    conn=sqlite3.connect('basededatos.db')
+    cursor=conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS persona (
+                    id_persona INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre VARCHAR(30) NOT NULL,
+                    fecha_nacimiento TIMESTAMP NOT NULL,
+                    dni INTEGER UNIQUE NOT NULL,
+                    altura INTEGER NOT NULL
+                    )''')
+    conn.commit()
+    conn.close()
 
 
 def borrar_tabla():
     """Implementar la funcion borrar_tabla, que borra la tabla creada 
     anteriormente."""
     pass # Completar
+    conn=sqlite3.connect('basededatos.db')
+    cursor=conn.cursor()
+    cursor.execute('''DROP TABLE IF EXISTS persona''')
+    conn.commit()
+    conn.close()
 
 
 # NO MODIFICAR - INICIO
