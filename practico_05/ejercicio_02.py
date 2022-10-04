@@ -10,6 +10,11 @@ class DatosSocio():
 
     def __init__(self):
         pass # Completar
+        engine1=create_engine('sqlite:///:memory:')
+        Base.metadata.create_all(engine1)
+        Session=sessionmaker(bind=engine1)
+        self.session=Session()
+        
 
     def buscar(self, id_socio: int) -> Optional[Socio]:
         """Devuelve la instancia del socio, dado su id. Devuelve None si no 
@@ -36,6 +41,7 @@ class DatosSocio():
     def alta(self, socio: Socio) -> Socio:
         """Agrega un nuevo socio a la tabla y lo devuelve"""
         pass # Completar
+        
 
     def baja(self, id_socio: int) -> bool:
         """Borra el socio especificado por el id. Devuelve True si el borrado 
