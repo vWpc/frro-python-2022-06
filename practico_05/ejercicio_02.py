@@ -14,6 +14,7 @@ class DatosSocio():
         Base.metadata.create_all(engine1)
         Session=sessionmaker(bind=engine1)
         self.session=Session()
+        valen = valen
         
 
     def buscar(self, id_socio: int) -> Optional[Socio]:
