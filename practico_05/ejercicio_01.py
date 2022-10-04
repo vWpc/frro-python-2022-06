@@ -19,3 +19,7 @@ class Socio(Base):
     dni = Column(Integer, unique=True)
     nombre = Column(String(250))
     apellido = Column(String(250))
+    def __init__(self, dni, nombre, apellido):
+        self.dni = dni
+        self.nombre = nombre
+        self.apellido = apellido
