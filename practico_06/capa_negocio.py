@@ -1,8 +1,10 @@
 # Implementar los metodos de la capa de negocio de socios.
 
-from practico_05.ejercicio_01 import Socio
-from practico_05.ejercicio_02 import DatosSocio
+from ejercicio_01 import Socio
+from ejercicio_02 import DatosSocio
 
+# TUVIMOS QUE COPIAR EJERCICIO_01 Y 02 DEL PRACTICO ANTERIOR 
+# PARA QUE FUNCIONE EL TEST PORQUE NO SE PUEDE IMPORTAR DE OTRO DIRECTORIO
 
 class DniRepetido(Exception):
     pass

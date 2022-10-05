@@ -2,9 +2,11 @@
 
 import unittest
 
-from practico_05.ejercicio_01 import Socio
-from practico_06.capa_negocio import NegocioSocio, LongitudInvalida
+from ejercicio_01 import Socio
+from capa_negocio import NegocioSocio, LongitudInvalida
 
+# TUVIMOS QUE COPIAR EJERCICIO_01 Y 02 DEL PRACTICO ANTERIOR 
+# PARA QUE FUNCIONE EL TEST PORQUE NO SE PUEDE IMPORTAR DE OTRO DIRECTORIO
 
 class TestsNegocio(unittest.TestCase):
 
