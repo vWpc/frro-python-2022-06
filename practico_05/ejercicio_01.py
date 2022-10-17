@@ -16,4 +16,5 @@ class Socio(Base):
     __tablename__ = 'socios'
 
     # Completar
+    #bla bla bla
 
