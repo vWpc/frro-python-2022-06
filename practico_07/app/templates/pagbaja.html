@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal</title>
+    <title>Baja</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
     <div>
-        <a href="alta" class="btn btn-primary">Alta Cliente</a>
-        <a href="baja" class="btn btn-danger">Baja Cliente</a>
+        <a href="/" class="btn btn-primary mb-3">Volver</a>
+    </div>
+    <div>
+        <h2>Escriba el numero de linea del cliente que desea dar de baja y pulse el boton</h2>
+        <form action="/bajaenv" method="post">         
+            <div class="form-floating mb-3">
+                <textarea type="email" class="form-control" name="num" placeholder="5"></textarea>
+                <label for="floatingTextarea">DNI</label>
+            </div>
+            <button type="submit" class="btn btn-success mb-3">Dar de Baja</button>
+        </form>
     </div>
     <div>
         <table class="table">
