@@ -33,10 +33,11 @@ def altacontacto():
         print ("Alta correcta")
     return redirect(url_for('principal'))
     
-@app.route('/baja/<id_socio>')
-def pagbaja(id):
-    
-    return render_template('pagbaja.html') 
+@app.route('/baja/<int:id_socio>')
+def pagbaja(id_socio):
+    baja= negocio.baja(id_socio)
+    return redirect(url_for('index'))    
+
 
 
 if __name__ == "__main__":
