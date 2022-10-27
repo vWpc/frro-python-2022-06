@@ -36,8 +36,7 @@ def altacontacto():
 @app.route('/baja/<int:id_socio>')
 def pagbaja(id_socio):
     baja= negocio.baja(id_socio)
-    return redirect(url_for('index'))    
-
+    return redirect(url_for('principal'))    
 
 
 if __name__ == "__main__":
