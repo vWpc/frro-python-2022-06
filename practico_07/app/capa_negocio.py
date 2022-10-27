@@ -76,7 +76,7 @@ class NegocioSocio(object):
         Devuelve True si el borrado fue exitoso.
         :rtype: bool
         """
-        resultado=self.baja(id_socio)
+        resultado=self.datos.baja(id_socio)
         if resultado is None:
             return False
         else: 
