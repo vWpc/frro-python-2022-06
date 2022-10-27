@@ -33,8 +33,8 @@ class NegocioSocio(object):
         Devuelve None si no encuentra nada.
         :rtype: Socio
         """
-        resultado=self.datos.buscar(id_socio)
-        return resultado
+        socio=self.datos.buscar(id_socio)
+        return socio
         
 
     def buscar_dni(self, dni_socio):
