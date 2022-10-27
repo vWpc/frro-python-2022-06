@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baja</title>
+    <title>Modificacion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
 
-    <form>
+    <form action="/modif" method="post">
+
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <label for="idsocio">ID</label>
+          <input type="text" class="form-control" id="idsocio" aria-describedby="" placeholder="">
         </div>
+
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <label for="dnisocio">DNI</label>
+          <input type="dnisocio" class="form-control" id="dnisocio" placeholder="">
         </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        
+        <div class="form-group">
+            <label for="nombresocio">Nombre</label>
+            <input type="nombresocio" class="form-control" id="nombresocio" placeholder="">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <div class="form-group">
+            <label for="apellidosocio">Apellido</label>
+            <input type="apellidosocio" class="form-control" id="apellidosocio" placeholder="">
+        </div>
+        
+       
+        <button type="submit" class="btn btn-primary">Aceptar</button>
+
       </form>
 
-      
+
 </body>
 </html>
