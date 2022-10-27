@@ -38,6 +38,9 @@ def pagbaja(id_socio):
     baja= negocio.baja(id_socio)
     return redirect(url_for('principal'))    
 
+@app.route('/modif/<int:id_socio>')
+def pagmodif(id_socio):
+    return render_template('pagmodificacion.html',data=id_socio)    
 
 if __name__ == "__main__":
     app.run(debug=True,port=5000)
