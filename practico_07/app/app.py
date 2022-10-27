@@ -40,7 +40,8 @@ def pagbaja(id_socio):
 
 @app.route('/modif/<int:id_socio>')
 def pagmodif(id_socio):
-    return render_template('pagmodificacion.html',data=id_socio)    
+    datasocio=negocio.buscar(id_socio)
+    return render_template('pagmodificacion.html',data=datasocio)    
 
 if __name__ == "__main__":
     app.run(debug=True,port=5000)
