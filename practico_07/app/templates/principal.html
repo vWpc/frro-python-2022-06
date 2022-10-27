@@ -24,13 +24,13 @@
               </tr>
             </thead>
             <tbody>
-                {%for contacto in data%}
+                {%for socio in data%}
                 <tr>
-                    <th scope="row">{{contacto.id_socio}}</th>
-                    <td>{{contacto.dni}}</td>
-                    <td>{{contacto.nombre}}</td>
-                    <td>{{contacto.apellido}}</td>
-                    <a href="baja/{{contacto.id_socio}}" class="btn btn-danger">Baja Cliente</a>
+                    <th scope="row">{{socio.id_socio}}</th>
+                    <td>{{socio.dni}}</td>
+                    <td>{{socio.nombre}}</td>
+                    <td>{{socio.apellido}}</td>
+                    <td><a href="baja/{{socio.id_socio}}" class="btn btn-danger">Baja Cliente</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
