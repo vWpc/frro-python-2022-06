@@ -8,34 +8,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-
-    <form action="/modif" method="post">
-
-        <div class="form-group">
-          <label for="idsocio">ID</label>
-          <input type="text" class="form-control" id="idsocio" aria-describedby="" placeholder="">
+    <a href="/" class="btn btn-secondary btn-lg mb-3">Volver</a>
+    <form action="/modifenv" method="post">
+        <div class="mb-3">
+          <label for="idsocio" class="form-label">ID</label>
+          <input class="form-control" type="text" name="idsocio" placeholder={{data.id_socio}} disabled readonly>
         </div>
-
-        <div class="form-group">
-          <label for="dnisocio">DNI</label>
-          <input type="dnisocio" class="form-control" id="dnisocio" placeholder="">
+        <div class="mb-3">
+          <label for="dnisocio" class="form-label">DNI</label>
+          <input class="form-control" type="text" name="dnisocio" placeholder={{data.dni}}>
         </div>
-        
-        <div class="form-group">
+        <div class="mb-3">
             <label for="nombresocio">Nombre</label>
-            <input type="nombresocio" class="form-control" id="nombresocio" placeholder="">
+            <input class="form-control" type="text" name="nombresocio" placeholder={{data.nombre}}>
         </div>
-
-        <div class="form-group">
+        <div class="mb-3">
             <label for="apellidosocio">Apellido</label>
-            <input type="apellidosocio" class="form-control" id="apellidosocio" placeholder="">
+            <input class="form-control" type="text" name="apellidosocio" placeholder={{data.apellido}}>
         </div>
-        
-       
-        <button type="submit" class="btn btn-primary">Aceptar</button>
-
+        <button type="submit" class="btn btn-success btn-lg mb-3">Aceptar</button>
       </form>
-
-
 </body>
 </html>

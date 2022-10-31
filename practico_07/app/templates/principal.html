@@ -9,8 +9,7 @@
 </head>
 <body>
     <div>
-        <a href="alta" class="btn btn-primary">Alta Cliente</a>
-        <a href="baja" class="btn btn-danger">Baja Cliente</a>
+        <a href="alta" class="btn btn-success btn-lg">Alta Cliente</a>
     </div>
     <div>
         <table class="table">
@@ -30,8 +29,8 @@
                     <td>{{socio.dni}}</td>
                     <td>{{socio.nombre}}</td>
                     <td>{{socio.apellido}}</td>
-                    <td><a href="modif/{{socio.id_socio}}" class="btn btn-primary">Modificacion Cliente</a>
-                        <a href="baja/{{socio.id_socio}}" class="btn btn-danger">Baja Cliente</a></td>
+                    <td><a href="modif/{{socio.id_socio}}" class="btn btn-outline-primary">Modificacion Cliente</a>
+                        <a href="baja/{{socio.id_socio}}" class="btn btn-outline-danger">Baja Cliente</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

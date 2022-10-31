@@ -68,6 +68,12 @@ class NegocioSocio(object):
                 if self.regla_3() is False:
                     self.datos.alta(socio)
                     return True
+                else:
+                    return 'Se excedio el maximo de socios'
+            else:
+                return 'El nombre y el apellido del socio debe tener entre 3 y 15 caracteres'
+        else:
+            return 'El DNI ya pertenece a otro socio'
 
 
     def baja(self, id_socio):
@@ -105,8 +111,8 @@ class NegocioSocio(object):
         resultado=self.datos.buscar_dni(socio.dni)
         if resultado is None:
             return False
-        else:
-            raise DniRepetido
+#        else:
+#            raise DniRepetido
 
     def regla_2(self, socio):
         """
@@ -118,10 +124,10 @@ class NegocioSocio(object):
         if len(socio.nombre) > self.MIN_CARACTERES and len(socio.nombre) < self.MAX_CARACTERES:
             if len(socio.apellido) > self.MIN_CARACTERES and len(socio.apellido) < self.MAX_CARACTERES:
                 return False
-            else:
-                raise LongitudInvalida
-        else:
-            raise LongitudInvalida
+#            else:
+#                raise LongitudInvalida
+#        else:
+#            raise LongitudInvalida
 
     def regla_3(self):
         """
@@ -132,5 +138,5 @@ class NegocioSocio(object):
         resultado=self.datos.todos()
         if len(resultado) < self.MAX_SOCIOS:
             return False
-        else:
-            raise MaximoAlcanzado
+#        else:
+#            raise MaximoAlcanzado

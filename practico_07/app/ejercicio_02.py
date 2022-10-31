@@ -43,7 +43,6 @@ class DatosSocio():
     def todos(self) -> List[Socio]:
         """Devuelve listado de todos los socios en la base de datos."""
         pass # Completar
-        print("llego hasta ACA")
         consulta=self.session.query(Socio).all()
         self.session.commit()
         return consulta
@@ -88,7 +87,7 @@ class DatosSocio():
         modificado.
         """
         pass # Completar
-        sociomodificar=self.session.query(Socio).filter(Socio.id_socio==socio.id_socio).first()
+        sociomodificar=self.session.query(Socio).filter(Socio.id_socio==socio.id_socio).first() #NO LO ESTA ENCONTRANDO REVISAR
         sociomodificar.dni=socio.dni
         sociomodificar.nombre=socio.nombre
         sociomodificar.apellido=socio.apellido
