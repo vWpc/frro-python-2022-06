@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <a href="alta" class="btn btn-success btn-lg">Alta Cliente</a>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+                {%for socio in data%}
+                <tr>
+                    <th scope="row">{{socio.id_socio}}</th>
+                    <td>{{socio.dni}}</td>
+                    <td>{{socio.nombre}}</td>
+                    <td>{{socio.apellido}}</td>
+                    <td><a href="modif/{{socio.id_socio}}" class="btn btn-outline-primary">Modificacion Cliente</a>
+                        <a href="baja/{{socio.id_socio}}" class="btn btn-outline-danger">Baja Cliente</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

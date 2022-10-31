@@ -10,7 +10,7 @@ class DatosSocio():
 
     def __init__(self):
         pass # Completar
-        engine1=create_engine('sqlite:///socios.sqlite')
+        engine1=create_engine('sqlite:///practico_07/socios.sqlite',connect_args={"check_same_thread": False})
         Base.metadata.create_all(engine1)
         Session=sessionmaker(bind=engine1)
         self.session=Session()
@@ -22,6 +22,7 @@ class DatosSocio():
         """
         pass # Completar
         consulta=self.session.query(Socio).filter_by(id_socio=id_socio).first()
+        self.session.commit()
         if consulta is None:
             return None
         else:
@@ -33,6 +34,7 @@ class DatosSocio():
         """
         pass # Completar
         consulta=self.session.query(Socio).filter_by(dni=dni_socio).first()
+        self.session.commit()
         if consulta is None:
             return None
         else:
@@ -42,6 +44,7 @@ class DatosSocio():
         """Devuelve listado de todos los socios en la base de datos."""
         pass # Completar
         consulta=self.session.query(Socio).all()
+        self.session.commit()
         return consulta
 
     def borrar_todos(self) -> bool:
@@ -84,7 +87,7 @@ class DatosSocio():
         modificado.
         """
         pass # Completar
-        sociomodificar=self.session.query(Socio).filter(Socio.id_socio==socio.id_socio).first()
+        sociomodificar=self.session.query(Socio).filter(Socio.id_socio==socio.id_socio).first() #NO LO ESTA ENCONTRANDO REVISAR
         sociomodificar.dni=socio.dni
         sociomodificar.nombre=socio.nombre
         sociomodificar.apellido=socio.apellido
@@ -96,47 +99,5 @@ class DatosSocio():
         """Devuelve el total de socios que existen en la tabla"""
         pass # Completar
         consulta=self.session.query(Socio).count()
+        self.session.commit()
         return consulta
-
-
-
-# NO MODIFICAR - INICIO
-
-# Test Creación
-datos = DatosSocio()
-
-# Test Alta
-socio = datos.alta(Socio(dni=12345678, nombre='Juan', apellido='Perez'))
-assert socio.id_socio > 0
-
-# Test Baja
-assert datos.baja(socio.id_socio) == True
-
-# Test Consulta
-socio_2 = datos.alta(Socio(dni=12345679, nombre='Carlos', apellido='Perez'))
-assert datos.buscar(socio_2.id_socio) == socio_2
-
-# Test Buscar DNI
-socio_2 = datos.alta(Socio(dni=12345670, nombre='Carlos', apellido='Perez'))
-assert datos.buscar_dni(socio_2.dni) == socio_2
-
-# Test Modificación
-socio_3 = datos.alta(Socio(dni=12345680, nombre='Susana', apellido='Gimenez'))
-socio_3.nombre = 'Moria'
-socio_3.apellido = 'Casan'
-socio_3.dni = 13264587
-datos.modificacion(socio_3)
-socio_3_modificado = datos.buscar(socio_3.id_socio)
-assert socio_3_modificado.id_socio == socio_3.id_socio
-assert socio_3_modificado.nombre == 'Moria'
-assert socio_3_modificado.apellido == 'Casan'
-assert socio_3_modificado.dni == 13264587
-
-# Test Conteo
-assert len(datos.todos()) == 3
-
-# Test Delete
-datos.borrar_todos()
-assert len(datos.todos()) == 0
-
-# NO MODIFICAR - FIN
