@@ -14,6 +14,12 @@ class Socio(Base):
         - apellido: string (longitud 250)
     """
     __tablename__ = 'socios'
-
     # Completar
-
+    id_socio = Column(Integer, primary_key=True, autoincrement=True)
+    dni = Column(Integer, unique=True)
+    nombre = Column(String(250))
+    apellido = Column(String(250))
+    def __init__(self, dni, nombre, apellido):
+        self.dni = dni
+        self.nombre = nombre
+        self.apellido = apellido
